@@ -1,0 +1,25 @@
+version: "2"
+
+services:
+  rethink-db:
+    container_name: "rethink-db"
+    image: rethinkdb:latest
+    ports: 
+      - "28015:28015"
+    volumes:
+      - /go/data
+  go-app:
+    container_name: "go-app"
+    image: golang:1.6.1-alpine
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile-golang-glide
+    volumes:
+      - .:/go/src/app
+    working_dir: /go/src/app
+    command: docker run golang go get -v github.com/flaviocopes/findlinks
+    command: go run src/main.go
+    ports: 
+      - "8000:8000"
+    depends_on: 
+      - rethink-db
