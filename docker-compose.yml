@@ -8,6 +8,8 @@ services:
       - "28015:28015"
     volumes:
       - /go/data
+ 
+
   go-app:
     container_name: "go-app"
     image: golang:1.6.1-alpine
@@ -17,9 +19,10 @@ services:
     volumes:
       - .:/go/src/app
     working_dir: /go/src/app
-    command: docker run golang go get -v github.com/flaviocopes/findlinks
-    command: go run src/main.go
+    command: /bin/sh -c "cd src && glide install && go build && ./src"
     ports: 
       - "8000:8000"
-    depends_on: 
-      - rethink-db
+    environment:
+      - GOPATH=/go
+ 
+

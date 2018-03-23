@@ -1,0 +1,12 @@
+package: mood-tracker-server-go/src
+import:
+# - package: github.com/fsnotify/fsnotify
+# - package: github.com/spf13/viper
+# - package: gopkg.in/gorethink/gorethink.v3
+- package: github.com/gorilla/mux
+# - package: github.com/satori/go.uuid
+# - package: github.com/valyala/fasthttp
+# - package: github.com/rs/cors
+
+  subpackages:
+  - assert
