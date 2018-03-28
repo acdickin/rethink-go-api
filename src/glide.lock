@@ -1,0 +1,12 @@
+hash: 993590da3ee34697bb29a9ebd213bdc2c7ca83107e52840a08a157948e5f62a7
+updated: 2018-03-28T16:57:03.418193073Z
+imports:
+- name: github.com/gorilla/context
+  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
+- name: github.com/gorilla/mux
+  version: 4dbd923b0c9e99ff63ad54b0e9705ff92d3cdb06
+- name: github.com/rs/cors
+  version: ff3499d70f672914f2f1518d5713a7f838704b05
+  subpackages:
+  - assert
+testImports: []

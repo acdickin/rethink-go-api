@@ -33,4 +33,4 @@
 # End of https://www.gitignore.io/api/go,linux
 
 client.txt
-src/vendors/
+src/vendor/

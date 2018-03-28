@@ -12,7 +12,7 @@ services:
 
   go-app:
     container_name: "go-app"
-    image: golang:1.6.1-alpine
+    image: golang:1.10
     build:
       context: ./
       dockerfile: ./docker/Dockerfile-golang-glide
